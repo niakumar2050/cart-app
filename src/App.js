@@ -29,11 +29,7 @@ function App() {
   useEffect(() =>{
     async function getData(){
       const res =  await Axios.get(`https://my-json-server.typicode.com/prograk/demo/items`);
-      
       setSdata(res.data);
-     
-      
-      
     }
     getData();
   })
@@ -54,7 +50,7 @@ function App() {
               <Shopping
                       key={val.id}
                      imgs={val.image}
-                     itemname={val.itemname}
+                     itemname={val.name}
                      price={val.price.actual}
                      rprice={val.price.display}
                      discount={val.discount}

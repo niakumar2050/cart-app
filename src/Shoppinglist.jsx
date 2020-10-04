@@ -7,9 +7,9 @@ const Shopping = (props) =>{
                 <img src={props.imgs} alt="ecom items"/>
                 <span className="p_name">{props.itemname}</span>
                 <div className="row">
-                <span className="price">{props.price}</span>
-                <span className="r_price">{props.rprice}</span>
-                <span className="discount">{props.discount}</span>
+                <span className="price">&#8377;{props.price}</span>
+                <span className="r_price">&#8377;{props.rprice}</span>
+                <span className="discount">{props.discount}% off</span>
             </div>
             <button className="add_cart">{props.addcart}</button>
             </div>

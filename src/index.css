@@ -106,15 +106,16 @@ header .star{
   display: block;
   padding: 1rem 0;
   color:#000;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
 }
 .shopping .product .price{
- font-size: 1rem;
+ font-size: 0.8rem;
  font-weight: bold;
 }
 .shopping .product .r_price{
-  font-size: .9;
-  color: #ccc;
+  font-size: .7rem;
+  color: #858181;
+  text-decoration: line-through;
 }
 .shopping .product .discount{
   color: #34a43c;
