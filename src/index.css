@@ -78,12 +78,19 @@ header .star{
 
 
 .shopping{
-  display:flex;
-  justify-content: flex-start;
+  display: flex;
+  justify-content:flex-start;
+  flex-wrap: wrap;
+  
 }
 .shopping .product{
-  margin:2rem 1rem;
-  max-width: 15rem;
+  margin-right: 2%;
+    max-width: 18%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.shopping .product:nth-child(5n){
+  margin-right: 0;
 }
 .shopping .product img{
   width: 100%;
@@ -146,3 +153,211 @@ header .star{
   color: #4269ea;
   text-decoration: underline;
 }
+.price-field{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.price-field form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.price-field form > div{
+  display: flex;
+}
+.price-field form button{
+  cursor: pointer;
+}
+.price-field span{
+  display: block;
+  margin: .5rem;
+  min-width: 2.7rem;
+}
+
+.range{
+  position: relative;
+}
+
+.range .value_change{
+  position:absolute;
+  left: 0;
+}
+.apply{
+  background-color: #4269ea;
+  color: #fff;
+  border:none;
+  text-align: center;
+  border-radius: 20px;
+  padding: .5rem 1.5rem;
+}
+
+.cart .row{
+  display:flex;
+  justify-content: space-between;
+}
+.cart .row .col8{
+  
+  border: .1rem solid #ccc;
+  background-color: #fff;
+  margin:1rem;
+}
+
+.cart .item_box{
+  display: flex;
+  padding: 1rem;
+  justify-content:flex-start;
+  align-items: center;
+}
+.cart .item_box img{
+  width: 7.5rem;
+  height: 7.5rem;
+}
+.cart .item_box .item_pirce span:first-child{
+  display: block;
+  padding: .5rem;
+  font-size: 1rem;
+
+}
+.cart .item_box .item_pirce span:last-child{
+  display: block;
+}
+
+.price_details{
+  display: block;
+  border:.1rem #ccc solid;
+  background-color: #fff;
+  margin-top: 2rem;
+}
+.price_details .row{
+  flex-direction: column;
+  width: 9rem;
+}
+.price_details .row > div{
+  display: flex;
+  font-size: 1rem;
+  justify-content: space-between;
+  min-width: 2rem;
+}
+
+body {
+  background-color: #151517;
+}
+
+.icon-cart {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  overflow: hidden;
+ 
+  top:0;
+  right: 1rem;
+}
+
+.icon-cart span{
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.icon-cart .cart-line-1 {
+  width: 15%;
+  height: 7%;
+  position: absolute;
+  left: 8%;
+  top: 25%;
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg); 
+  background-color: #fff;
+  border-bottom-left-radius: 35%;
+}
+
+.icon-cart .cart-line-2 {
+  width: 35%;
+  height: 7%;
+  position: absolute;
+  left: 6%;
+  top: 40%;
+  -webkit-transform: rotate(80deg);
+  -moz-transform: rotate(80deg);
+  -ms-transform: rotate(80deg);
+  transform: rotate(80deg); 
+  background-color: #fff;
+}
+
+.icon-cart .cart-line-2:before {
+  content: "";
+  width: 120%;
+  height: 100%;
+  position: absolute;
+  left: 45%;
+  top: -280%;
+  -webkit-transform: rotate(-80deg);
+  -moz-transform: rotate(-80deg);
+  -ms-transform: rotate(-80deg);
+  transform: rotate(-80deg); 
+  background-color: inherit;
+}
+
+.icon-cart .cart-line-2:after {
+  content: "";
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  left: 59%;
+  top: -670%;
+  background-color: inherit;
+  -webkit-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  transform: rotate(40deg); 
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 25%;
+}
+
+.icon-cart .cart-line-3 {
+  width: 30%;
+  height: 7%;
+  position: absolute;
+  left: 33%;
+  top: 45%;
+  background-color: #fff;
+}
+
+.icon-cart .cart-line-3:after {
+  content: "";
+  width: 124%;
+  height: 100%;
+  position: absolute;
+  top: -150%;
+  left: -5%;
+  background-color: inherit;
+}
+
+.icon-cart .cart-wheel {
+  width: 12%;
+  height: 12%;
+  background-color: #fff;
+  border-radius: 100%;
+  position: absolute;
+  left: 28%;
+  bottom: 20%;
+}
+
+.icon-cart .cart-wheel:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: 100%;
+  position: absolute;
+  left: 200%;
+  bottom: 0;
+}
+
