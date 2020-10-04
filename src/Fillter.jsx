@@ -14,7 +14,7 @@ const Fillter = () =>{
      <form>
        <div>
      <span>&#8377; 100</span>
-       <input type="range"  min="100" max="1000"  id="lower"  onChange={inputevent}/>
+       <input type="range"  min="100" max="50000"  id="lower"  onChange={inputevent}/>
      <span>&#8377; {fval}</span>
      </div>
      <button className="apply">Apply</button>
