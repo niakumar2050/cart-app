@@ -21,7 +21,7 @@ const Cart = () =>{
                 </div>
                 <div className="col4">
                     <div className="price_details">
-                        <div class="row">
+                        <div className="row">
                             <div>
                             <span>Price</span>
                             <span>990</span>
