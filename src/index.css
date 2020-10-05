@@ -8,7 +8,7 @@
 body{
   font-size: 62.5%;
   font-family: Verdana, sans-serif;
-  background-color: #fff;
+  background-color: #f2f3f7;
 }
 header{
   background-color: #4269ea;
@@ -224,12 +224,34 @@ header .star{
 .cart .item_box .item_pirce span:last-child{
   display: block;
 }
+.cart .item_box .add_box button{
+  
+  border:none;
+  font-size: 1rem;
+  border:.1rem solid #ccc;
+  border-radius: 50%;
+  margin: 0 .5rem;
+  width: 2rem;
+    height: 2rem;
+  background-color: transparent;
+}
+.cart .item_box .add_box input[type="text"]{
+  width:1.5rem;
+  height:1.5rem;
+  border: 1px #ccc solid;
+  text-align: center;
+}
+.remove{
+  border:none;
+  background-color: transparent;
+}
 
 .price_details{
   display: block;
   border:.1rem #ccc solid;
   background-color: #fff;
   margin-top: 2rem;
+  padding:1rem
 }
 .price_details .row{
   flex-direction: column;
@@ -240,6 +262,12 @@ header .star{
   font-size: 1rem;
   justify-content: space-between;
   min-width: 2rem;
+  margin-bottom: .5rem;
+  border-bottom: .1rem #ccc solid;
+}
+.price_details .row > div:last-child{
+  border-bottom: none;
+  font-weight: bold;
 }
 
 
@@ -358,5 +386,10 @@ header .star{
   position: absolute;
   left: 200%;
   bottom: 0;
+}
+
+.heading_cart{
+  text-align: center;
+  margin-top: 1rem;
 }
 

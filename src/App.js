@@ -75,8 +75,9 @@ function App() {
                         </div>
                     </div>
                 </div>
+                <Cart cart={cart}/>
             </div>
-            <Cart cart={cart}/>
+            
         </>
     );
 }

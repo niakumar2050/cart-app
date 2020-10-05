@@ -4,7 +4,7 @@ const Cart = props => {
     console.log(props.cart);
     return (
         <>
-        <h2 id="cart">Cart Page</h2>
+        <h2 className="heading_cart">Cart Page</h2>
         <div className="cart">
             <div className="row">
                 <div className="col8">
@@ -25,7 +25,7 @@ const Cart = props => {
                                       </div>
                                       <div className="add_box">
                                           <button>-</button>
-                                          <input type="text" />
+                                          <input type="text" value="1" />
                                           <button>+</button>
                                       </div>
                                       <button className="remove">Remove</button>
@@ -38,15 +38,15 @@ const Cart = props => {
                         <div className="row">
                             <div>
                                 <span>Price</span>
-                                <span>{props.cart.reduce((prevValue, currentValue) => prevValue + currentValue.price.actual, 0)}</span>
+                                <span>&#8377;{props.cart.reduce((prevValue, currentValue) => prevValue + currentValue.price.actual, 0)}</span>
                             </div>
                             <div>
                                 <span>Discount</span>
-                                <span>{props.cart.reduce((prevValue, currentValue) => prevValue + currentValue.discount, 0)}</span>
+                                <span>&#8377;{props.cart.reduce((prevValue, currentValue) => prevValue + currentValue.discount, 0)}</span>
                             </div>
                             <div>
                                 <span>total Payable</span>
-                                <span>{props.cart.reduce((prevValue, currentValue) => prevValue + currentValue.price.actual + currentValue.discount, 0)}</span>
+                                <span>&#8377;{props.cart.reduce((prevValue, currentValue) => prevValue + currentValue.price.actual + currentValue.discount, 0)}</span>
                             </div>
                         </div>
                     </div>
