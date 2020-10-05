@@ -1,10 +1,10 @@
 import React from "react";
 
-const Sort = () =>{
+const Sort = (props) =>{
     return(
         <div className="sort">
             <h5>Short by</h5>
-            <span>price-hight low</span>
+    <span>{props.shortp}</span>
             <span>price-low hight</span>
             <span>Discount</span>
             

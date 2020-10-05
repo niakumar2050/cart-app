@@ -56,7 +56,7 @@ function App() {
                         <Fillter sortData={sortData} maxVal={maxVal}/>
                     </div>
                     <div className="col10">
-                        <Sort />
+                        <Sort shortp ="low to hight" onClick={sortData}  />
                         <div className="shopping">
                             {Sdata.map(function ecart(val) {
                                 return (

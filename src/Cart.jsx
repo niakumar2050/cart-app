@@ -4,7 +4,7 @@ const Cart = props => {
     console.log(props.cart);
     return (
         <>
-        <h2>Cart Page</h2>
+        <h2 id="cart">Cart Page</h2>
         <div className="cart">
             <div className="row">
                 <div className="col8">
@@ -42,11 +42,11 @@ const Cart = props => {
                             </div>
                             <div>
                                 <span>Discount</span>
-                                <span>990</span>
+                                <span>{props.cart.reduce((prevValue, currentValue) => prevValue + currentValue.discount, 0)}</span>
                             </div>
                             <div>
                                 <span>total Payable</span>
-                                <span>990</span>
+                                <span>{props.cart.reduce((prevValue, currentValue) => prevValue + currentValue.price.actual + currentValue.discount, 0)}</span>
                             </div>
                         </div>
                     </div>

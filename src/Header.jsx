@@ -1,6 +1,7 @@
 import React from "react";
 import Search from "./Search";
 
+import {Link} from "react-router-dom";
 const Header = props => {
     console.log(props);
     return (
@@ -15,7 +16,7 @@ const Header = props => {
                     <div className="cart-line-2"></div>
                     <div className="cart-line-3"></div>
                     <div className="cart-wheel"></div>
-                    <span>{props.totalItem}</span>
+                    <Link to ="/Cart"> <span>{props.totalItem}</span> </Link>
                 </div>
                 <div></div>
             </header>

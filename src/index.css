@@ -143,12 +143,12 @@ header .star{
 }
 
 .sort h5{
-  font-size: 1rem;
+  font-size: .8rem;
   margin-right: 1rem;
 }
 .sort span{
   margin-right: 1.5rem;
-  font-size: 1rem;
+  font-size: .8rem;
   cursor: pointer;
 }
 .sort span:hover{
@@ -233,7 +233,7 @@ header .star{
 }
 .price_details .row{
   flex-direction: column;
-  width: 9rem;
+  width: 13rem;
 }
 .price_details .row > div{
   display: flex;
