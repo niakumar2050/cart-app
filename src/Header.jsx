@@ -8,7 +8,7 @@ const Header = props => {
         <>
             <header>
                 <span className="star"></span>
-                <div>
+                <div className="search_box">
                     <Search searchData={props.searchData} />
                 </div>
                 <div className="icon-cart">
