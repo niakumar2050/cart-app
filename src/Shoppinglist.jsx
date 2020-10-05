@@ -11,7 +11,7 @@ const Shopping = (props) =>{
                 <span className="r_price">&#8377;{props.rprice}</span>
                 <span className="discount">{props.discount}% off</span>
             </div>
-            <button className="add_cart">{props.addcart}</button>
+            <button className="add_cart" onClick={props.addInCart}>{props.addcart}</button>
             </div>
         
     )

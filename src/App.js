@@ -1,76 +1,84 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Cart from "./Cart";
 import Sort from "./Sort";
 import Fillter from "./Fillter";
 import Shopping from "./Shoppinglist";
-// import Sdata from "./Sdata";
-import './App.css';
-import Axios from 'axios';
-
-// function ecart(val){
-//   return(
-//     <Shopping
-//            imgs={val.imgss}
-//            itemname={val.itemname}
-//            price={val.price}
-//            rprice={val.rprice}
-//            discount={val.discount}
-//            addcart ={val.addcart}
-//            ></Shopping>
-//   )
-// }
-
-
+import "./App.css";
+import Axios from "axios";
 
 function App() {
+    const [Sdata, setSdata] = useState([]);
+    const [allData, setAllData] = useState([]);
+    const [maxVal, setMaxVal] = useState(50000);
+    const [cart, setCart] = useState([]);
 
-  const [Sdata, setSdata] = useState([]);
-  useEffect(() =>{
-    async function getData(){
-      const res =  await Axios.get(`https://my-json-server.typicode.com/prograk/demo/items`);
-      setSdata(res.data);
+    useEffect(() => {
+        async function getData() {
+            const res = await Axios.get(
+                `https://my-json-server.typicode.com/prograk/demo/items`
+            );
+            setSdata(res.data);
+            setAllData(res.data);
+        }
+        getData();
+    }, []);
+
+    const searchData = (e) => {
+      const searchFilterData = allData.filter((data) => {
+          return data.name.toLowerCase().includes(e.target.value.toLowerCase());
+      });
+      setSdata(prevState => searchFilterData);
     }
-    getData();
-  })
-  
-  return (
-    <>
-      <Header></Header>
-      <div className="wrapper">
-        <div className="row">
-          <div className="col2">
-          <Fillter></Fillter>
-          </div>
-          <div className="col10">
-          <Sort></Sort>
-          <div className="shopping">
-           {Sdata.map(function ecart(val){
-             return(
-              <Shopping
-                      key={val.id}
-                     imgs={val.image}
-                     itemname={val.name}
-                     price={val.price.actual}
-                     rprice={val.price.display}
-                     discount={val.discount}
-                     addcart ="Add to cart"
-                     ></Shopping>
-            )
 
-           })}
-           </div>
-          </div>
-        </div>
-      </div>
-      <Cart></Cart>
-      
-      
-      
-      
+    const sortData = (e) => {
+        setMaxVal(e.target.value);
+        const searchFilterData = allData.filter((data) => {
+            if(100 < data.price.actual && data.price.actual < e.target.value){
+                return data;  
+            }
+        });
+        setSdata(prevState => searchFilterData);
+    }
 
-    </>
-  );
+    const addToCart = (id) => {
+        let productToAdd = parseInt(id) - 1;
+        // setCart([allData[productToAdd]]);
+        setCart(prevState => [...cart, allData[productToAdd]]);
+    }
+    
+    return (
+        <>
+            <Header searchData={searchData} totalItem={cart.length}/>
+            <div className="wrapper">
+                <div className="row">
+                    <div className="col2">
+                        <Fillter sortData={sortData} maxVal={maxVal}/>
+                    </div>
+                    <div className="col10">
+                        <Sort />
+                        <div className="shopping">
+                            {Sdata.map(function ecart(val) {
+                                return (
+                                    <Shopping
+                                        key={val.id}
+                                        imgs={val.image}
+                                        itemname={val.name}
+                                        price={val.price.actual}
+                                        rprice={val.price.display}
+                                        discount={val.discount}
+                                        addcart="Add to cart"
+                                        addInCart={() => addToCart(val.id)}
+                                    ></Shopping>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Cart cart={cart}/>
+        </>
+    );
 }
 
 export default App;

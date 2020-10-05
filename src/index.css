@@ -8,6 +8,7 @@
 body{
   font-size: 62.5%;
   font-family: Verdana, sans-serif;
+  background-color: #fff;
 }
 header{
   background-color: #4269ea;
@@ -241,9 +242,6 @@ header .star{
   min-width: 2rem;
 }
 
-body {
-  background-color: #151517;
-}
 
 .icon-cart {
   width: 48px;
